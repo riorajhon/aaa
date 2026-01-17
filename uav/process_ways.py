@@ -326,8 +326,6 @@ class WayProcessor:
                 self.stats['validated_score_1'] += 1
             except Exception as e:
                 print(f"  ❌ Error saving to validated: {e}")
-            
-            return
         
         # Get coordinates from Nominatim
         lat = nominatim_result.get('lat')
