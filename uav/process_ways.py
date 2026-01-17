@@ -344,7 +344,7 @@ class WayProcessor:
         reverse_osm_type = nominatim_reverse_result.get('osm_type', '')
         
         # Check if OSM IDs match
-        if reverse_osm_id == nominatim_osm_id:
+        if reverse_osm_id != nominatim_osm_id:
             print(f"  ⏭️  OSM ID match: Original={nominatim_osm_id}, Reverse={reverse_osm_id}")
             self.stats['skipped_mismatch'] += 1
             return
