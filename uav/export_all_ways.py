@@ -16,8 +16,12 @@ class WayExporter(osmium.SimpleHandler):
         tags = {tag.k: tag.v for tag in w.tags}
         
         # Filter: skip if no name:* tags (like name:en, name:fr, etc.)
-        has_name_variant = any(k.startswith('name:') for k in tags.keys())
+        has_name_variant = any(k.startswith('name') for k in tags.keys())
         if not has_name_variant:
+            return
+        
+        has_leisure = any(k.startswith('leisure') for k in tags.keys())
+        if not has_leisure:
             return
         
         self.way_count += 1

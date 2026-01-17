@@ -3,3 +3,4 @@ test
 .md
 candidate_node.txt
 uav/osm_data
+uav/all_ways_za_all.json
