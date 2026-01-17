@@ -44,6 +44,15 @@ class WayProcessor:
             'errors': 0
         }
     
+    def convert_osm_type(self, osm_type):
+        """Convert OSM type to clean format (way -> W, node -> N, relation -> R)"""
+        type_mapping = {
+            'way': 'W',
+            'node': 'N', 
+            'relation': 'R'
+        }
+        return type_mapping.get(osm_type.lower(), osm_type.upper())
+    
     def query_nominatim_lookup(self, way_id):
         """Query Nominatim by OSM way ID"""
         url = "https://nominatim.openstreetmap.org/lookup"
@@ -343,8 +352,11 @@ class WayProcessor:
         reverse_osm_id = nominatim_reverse_result.get('osm_id')
         reverse_osm_type = nominatim_reverse_result.get('osm_type', '')
         
+        # Convert osm_type to clean format (way -> W, node -> N, relation -> R)
+        reverse_osm_type_clean = self.convert_osm_type(reverse_osm_type)
+        
         # Check if OSM IDs match
-        if reverse_osm_id != nominatim_osm_id:
+        if reverse_osm_id == nominatim_osm_id:
             print(f"  ⏭️  OSM ID match: Original={nominatim_osm_id}, Reverse={reverse_osm_id}")
             self.stats['skipped_mismatch'] += 1
             return
@@ -359,7 +371,7 @@ class WayProcessor:
             'country': nominatim_country,
             'extra': {
                 'origin_osm': f'W{way_id}',
-                'reverse_osm': f'{reverse_osm_type}{reverse_osm_id}',
+                'reverse_osm': f'{reverse_osm_type_clean}{reverse_osm_id}',
                 'name': way_name
             }
         }
