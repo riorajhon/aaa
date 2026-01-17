@@ -52,7 +52,7 @@ class WayProcessor:
             'format': 'json',
             'addressdetails': 1
         }
-        headers = {'User-Agent': 'UAV-Processor/1.0'}
+        headers = {'User-Agent': 'UAV-Processor/1.0', 'accept-language': 'en'}
         
         try:
             response = requests.get(url, params=params, headers=headers, timeout=10)
@@ -65,13 +65,42 @@ class WayProcessor:
         except Exception as e:
             return None, str(e)
     
+    def query_nominatim_reverse(self, lat, lon):
+        """Query Nominatim reverse geocoding by coordinates"""
+        url = "https://nominatim.openstreetmap.org/reverse"
+        params = {
+            'lat': lat,
+            'lon': lon,
+            'format': 'json',
+            'addressdetails': 1
+        }
+        headers = {'User-Agent': 'UAV-Processor/1.0'}
+        
+        print(f"    Nominatim reverse: {lat}, {lon}")
+        
+        try:
+            response = requests.get(url, params=params, headers=headers, timeout=10)
+            time.sleep(1)  # Rate limit
+            
+            if response.status_code == 200:
+                result = response.json()
+                print(f"    Nominatim reverse response: {result.get('osm_type', '')}{result.get('osm_id', '')}")
+                return result, None
+            else:
+                return None, f"HTTP {response.status_code}"
+        except requests.exceptions.Timeout:
+            return None, "Timeout"
+        except requests.exceptions.ConnectionError:
+            return None, "Connection error"
+        except Exception as e:
+            return None, str(e)
+    
     def query_photon_search(self, name, country):
         """Query Photon API by name and country"""
         url = "https://photon.komoot.io/api/"
         query = f"{name}, {country}"
         params = {
-            'q': query,
-            'limit': 1
+            'q': query
         }
         
         print(f"    Photon search: {query}")
@@ -197,24 +226,38 @@ class WayProcessor:
             print(f"  ⚠️  No Photon results")
             return
         
-        feature = features[0]
-        properties = feature.get('properties', {})
-        geometry = feature.get('geometry', {})
+        print(f"  🔍 Searching through {len(features)} Photon results for matching OSM ID...")
+        
+        # Search for matching OSM ID in all features
+        matching_feature = None
+        for feature in features:
+            properties = feature.get('properties', {})
+            photon_osm_id = properties.get('osm_id', '')
+            photon_osm_type = properties.get('osm_type', '')
+            
+            if photon_osm_id == way_id:
+                matching_feature = feature
+                print(f"  ✓ Found match: {photon_osm_type}{photon_osm_id}")
+                break
+        
+        # If no match found, skip
+        if not matching_feature:
+            print(f"  ⏭️  No matching OSM ID found in {len(features)} Photon results (looking for W{way_id})")
+            self.stats['skipped_mismatch'] += 1
+            return
+        
+        # Process the matching feature
+        properties = matching_feature.get('properties', {})
+        geometry = matching_feature.get('geometry', {})
         coordinates = geometry.get('coordinates', [])
         
         if len(coordinates) < 2:
             print(f"  ❌ Invalid Photon coordinates")
             return
         
-        # Get OSM ID from Photon result
         photon_osm_type = properties.get('osm_type', '')
         photon_osm_id = properties.get('osm_id', '')
-        
-        # Check if OSM IDs match
-        if photon_osm_id != way_id:
-            print(f"  ⏭️  OSM ID mismatch: JSON W{way_id}, Photon {photon_osm_type}{photon_osm_id}")
-            self.stats['skipped_mismatch'] += 1
-            return
+        photon_country = properties.get('country', '')
         
         # Build address
         address = self.build_address_from_photon(properties)
@@ -227,6 +270,7 @@ class WayProcessor:
             'longitude': longitude,
             'label': 'found address in photon but not in nominatim',
             'status': 1,
+            'country': photon_country,
             'extra': {
                 'origin_osm': f'W{way_id}',
                 'photon_osm': f'{photon_osm_type}{photon_osm_id}',
@@ -281,30 +325,27 @@ class WayProcessor:
         lon = nominatim_result.get('lon')
         nominatim_osm_id = nominatim_result.get('osm_id')
         
+        # Extract country from Nominatim result
+        nominatim_address = nominatim_result.get('address', {})
+        nominatim_country = nominatim_address.get('country', '')
+        
         if not lat or not lon:
             print(f"  ❌ No coordinates in Nominatim result")
             return
         
-        # Query Photon reverse
-        photon_result, error = self.query_photon_reverse(lat, lon)
+        # Query Nominatim reverse
+        nominatim_reverse_result, error = self.query_nominatim_reverse(lat, lon)
         
-        if error or not photon_result:
-            print(f"  ❌ Photon reverse error: {error}")
+        if error or not nominatim_reverse_result:
+            print(f"  ❌ Nominatim reverse error: {error}")
             return
         
-        features = photon_result.get('features', [])
-        if len(features) == 0:
-            print(f"  ⚠️  No Photon reverse results")
-            return
-        
-        feature = features[0]
-        properties = feature.get('properties', {})
-        photon_osm_id = properties.get('osm_id')
-        photon_osm_type = properties.get('osm_type', '')
+        reverse_osm_id = nominatim_reverse_result.get('osm_id')
+        reverse_osm_type = nominatim_reverse_result.get('osm_type', '')
         
         # Check if OSM IDs match
-        if photon_osm_id == nominatim_osm_id:
-            print(f"  ⏭️  OSM ID match: Nominatim={nominatim_osm_id}, Photon={photon_osm_id}")
+        if reverse_osm_id == nominatim_osm_id:
+            print(f"  ⏭️  OSM ID match: Original={nominatim_osm_id}, Reverse={reverse_osm_id}")
             self.stats['skipped_mismatch'] += 1
             return
         
@@ -315,9 +356,10 @@ class WayProcessor:
             'longitude': float(lon),
             'label': '',
             'status': 0,
+            'country': nominatim_country,
             'extra': {
                 'origin_osm': f'W{way_id}',
-                'photon_osm': f'{photon_osm_type}{photon_osm_id}',
+                'reverse_osm': f'{reverse_osm_type}{reverse_osm_id}',
                 'name': way_name
             }
         }
