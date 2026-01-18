@@ -43,8 +43,8 @@ def main():
     # Command line arguments
     if len(sys.argv) > 1:
         country_code = sys.argv[1]
-        input_filename = f'uav/osm_data/{country_code}-latest.osm.pbf'
-        output_filename = f'uav/all_ways_{country_code}.json'
+        input_filename = f'osm_data/{country_code}-latest.osm.pbf'
+        output_filename = f'all_ways_{country_code}.json'
     else:
         print("Usage: python export_all_ways.py <country_code>")
         print("Example: python export_all_ways.py ye")
@@ -70,13 +70,13 @@ def main():
         with open(output_filename, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
         
-        print(f"\n✓ Export complete!")
+        print(f"\n[OK] Export complete!")
         print(f"Total ways processed: {handler.total_processed:,}")
         print(f"Ways with name:* tags exported: {handler.way_count:,}")
         print(f"Output file: {output_filename}")
     
     except KeyboardInterrupt:
-        print("\n\n⚠️  Interrupted by user!")
+        print("\n\n[WARNING] Interrupted by user!")
         
         # Save partial results
         output_data = {

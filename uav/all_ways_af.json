@@ -1,0 +1,1301 @@
+{
+  "source": "osm_data/af-latest.osm.pbf",
+  "total_ways_processed": 2444317,
+  "ways_with_name_tags": 154,
+  "ways": [
+    {
+      "id": 25866557,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک شهر نو",
+        "name:en": "Shar-i-Naw Park",
+        "name:fa": "پارک شهر نو",
+        "name:ps": "د نوي ښار پارک",
+        "name:ru": "Шахре Нау",
+        "trees": "pine_trees",
+        "wikipedia": "en:Shahr-e Naw Park"
+      }
+    },
+    {
+      "id": 25866709,
+      "tags": {
+        "leisure": "park",
+        "name": "چمن حضوری",
+        "name:en": "Hozori Park",
+        "name:ru": "Чамани Хозори",
+        "wikidata": "Q5069426",
+        "wikipedia": "fa:چمن حضوری"
+      }
+    },
+    {
+      "id": 32803739,
+      "tags": {
+        "leisure": "park",
+        "name": "Abdul Haq Park",
+        "note": "Unverified"
+      }
+    },
+    {
+      "id": 120920756,
+      "tags": {
+        "leisure": "park",
+        "name": "Gul Agha Sherzai Lobghari"
+      }
+    },
+    {
+      "id": 120921941,
+      "tags": {
+        "leisure": "park",
+        "name": "Shahid Amir Habibullah Khan Park"
+      }
+    },
+    {
+      "id": 120924152,
+      "tags": {
+        "leisure": "park",
+        "name": "Eid ga Masjid Park"
+      }
+    },
+    {
+      "id": 121049969,
+      "tags": {
+        "leisure": "swimming_pool",
+        "name": "Siraj-ul-Aimarat Swimming Pool"
+      }
+    },
+    {
+      "id": 121516007,
+      "tags": {
+        "leisure": "swimming_pool",
+        "name": "Sherzai Swimming Pool"
+      }
+    },
+    {
+      "id": 121874453,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Jawan Ha-JAA"
+      }
+    },
+    {
+      "id": 122095375,
+      "tags": {
+        "leisure": "park",
+        "name": "Mia Omar School Play Ground"
+      }
+    },
+    {
+      "id": 122371932,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Area"
+      }
+    },
+    {
+      "id": 122385229,
+      "tags": {
+        "leisure": "park",
+        "name": "Nangarhar University Play Ground 2"
+      }
+    },
+    {
+      "id": 122385308,
+      "tags": {
+        "leisure": "park",
+        "name": "Nangarhar University Play Ground"
+      }
+    },
+    {
+      "id": 122892253,
+      "tags": {
+        "description": "Per Sahib-2nd Park",
+        "fixme": "Is this a park, or is this just an orchard with a name?",
+        "leisure": "park",
+        "name": "Peer NaqibSayed Ahmad Gilany Bagh"
+      }
+    },
+    {
+      "id": 122892254,
+      "tags": {
+        "fixme": "Is this a park, or is this just an orchard with a name?",
+        "leisure": "park",
+        "name": "Peer Naqib Sayed Ahmad Gilany Bagh 2"
+      }
+    },
+    {
+      "id": 122898585,
+      "tags": {
+        "leisure": "park",
+        "name": "Spin Ghar Hotel Garden"
+      }
+    },
+    {
+      "id": 123055118,
+      "tags": {
+        "leisure": "park",
+        "name": "Daramsal Park"
+      }
+    },
+    {
+      "id": 123190924,
+      "tags": {
+        "leisure": "park",
+        "name": "Form Hadah Park-JAA"
+      }
+    },
+    {
+      "id": 123316194,
+      "tags": {
+        "leisure": "park",
+        "name": "Form Hadah Park-JAA"
+      }
+    },
+    {
+      "id": 123317843,
+      "tags": {
+        "leisure": "park",
+        "name": "Children Play Ground"
+      }
+    },
+    {
+      "id": 123317845,
+      "tags": {
+        "leisure": "park",
+        "name": "Children Play Ground"
+      }
+    },
+    {
+      "id": 123317846,
+      "tags": {
+        "leisure": "park",
+        "name": "Form Hadah Park-JAA"
+      }
+    },
+    {
+      "id": 123317847,
+      "tags": {
+        "leisure": "park",
+        "name": "Children Play Ground"
+      }
+    },
+    {
+      "id": 123687732,
+      "tags": {
+        "fixme": "Is this a park, or is this just an orchard with a name?",
+        "leisure": "park",
+        "name": "Peer Sayed Ahmad Gillany Bagh 3"
+      }
+    },
+    {
+      "id": 123834306,
+      "tags": {
+        "leisure": "park",
+        "name": "Shekh Mesri Park"
+      }
+    },
+    {
+      "id": 123838909,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Jawan Ha Daroonta"
+      }
+    },
+    {
+      "id": 123839645,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Jawan Ha Daroonta"
+      }
+    },
+    {
+      "id": 126865111,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Zan Ha Daroonta"
+      }
+    },
+    {
+      "id": 127163470,
+      "tags": {
+        "fixme": "Is this a park, or is this just an orchard with a name?",
+        "leisure": "park",
+        "name": "Peer Naqib Sayed Ahmad Gilany Garden"
+      }
+    },
+    {
+      "id": 131957597,
+      "tags": {
+        "leisure": "park",
+        "name": "Chaldren Park"
+      }
+    },
+    {
+      "id": 132198357,
+      "tags": {
+        "addr:street": "3rd Nahia Jalalabad",
+        "leisure": "park",
+        "name": "چهاراهی مرستون پارک  Marastoon Park"
+      }
+    },
+    {
+      "id": 132687458,
+      "tags": {
+        "leisure": "pitch",
+        "name": "football play ground",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 134630957,
+      "tags": {
+        "leisure": "park",
+        "name": "National Army Head Quarters Park"
+      }
+    },
+    {
+      "id": 161533023,
+      "tags": {
+        "leisure": "park",
+        "name": "Park Baburyan"
+      }
+    },
+    {
+      "id": 188315588,
+      "tags": {
+        "leisure": "park",
+        "name": "Joy Haft Parks"
+      }
+    },
+    {
+      "id": 188315589,
+      "tags": {
+        "leisure": "park",
+        "name": "Joy Haft Parks"
+      }
+    },
+    {
+      "id": 188315590,
+      "tags": {
+        "leisure": "park",
+        "name": "Joy Haft Parks"
+      }
+    },
+    {
+      "id": 188315591,
+      "tags": {
+        "leisure": "park",
+        "name": "Joy Haft Parks"
+      }
+    },
+    {
+      "id": 188315592,
+      "tags": {
+        "leisure": "park",
+        "name": "Joy Haft Parks"
+      }
+    },
+    {
+      "id": 199353387,
+      "tags": {
+        "alt_name:ru": "Сады Бабура",
+        "leisure": "park",
+        "name": "Bagh-e Babur",
+        "name:de": "Babur-Garten",
+        "name:en": "Gardens of Babur",
+        "name:ml": "ബാബർ തോട്ടങ്ങൾ",
+        "name:ps": "بابر بڼ",
+        "name:ru": "Баги Бабур",
+        "start_date": "1637",
+        "wikidata": "Q1900234",
+        "wikipedia": "fa:باغ بابر"
+      }
+    },
+    {
+      "id": 199419117,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان نوروز"
+      }
+    },
+    {
+      "id": 199570953,
+      "tags": {
+        "leisure": "park",
+        "name": "Kabul Museum Park",
+        "name:en": "Kabul Museum Park",
+        "name:ru": "Парк Кабульского музея"
+      }
+    },
+    {
+      "id": 200511527,
+      "tags": {
+        "access": "no",
+        "disused": "yes",
+        "leisure": "swimming_pool",
+        "name": "Bibi Hill Pool",
+        "nudism": "no"
+      }
+    },
+    {
+      "id": 201198534,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان زرنگار",
+        "name:en": "Zarnergar Park",
+        "name:ru": "Зарнегар",
+        "wikidata": "Q108559372",
+        "wikipedia": "fa:پارک زرنگار"
+      }
+    },
+    {
+      "id": 251882852,
+      "tags": {
+        "alt_name:ru": "Женский парк",
+        "female": "yes",
+        "leisure": "park",
+        "male": "no",
+        "name": "باغ زنانه",
+        "name:en": "Women Garden",
+        "name:fa": "باغ زنانه",
+        "name:ru": "Баги-Занана"
+      }
+    },
+    {
+      "id": 264165567,
+      "tags": {
+        "leisure": "pitch",
+        "name": "ورزشگاه هرات",
+        "name:en": "Herat Soccer Stadium",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 339577084,
+      "tags": {
+        "leisure": "park",
+        "name": "Чорбог",
+        "source": "Bing"
+      }
+    },
+    {
+      "id": 339685445,
+      "tags": {
+        "leisure": "park",
+        "name": "Богак"
+      }
+    },
+    {
+      "id": 342341065,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک فردوسی",
+        "name:en": "Ferdowsi park",
+        "name:ru": "Фирдоуси"
+      }
+    },
+    {
+      "id": 346023429,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان"
+      }
+    },
+    {
+      "id": 346318345,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان مسجد جامع هرات",
+        "name:en": "Herat Great Mosque Park"
+      }
+    },
+    {
+      "id": 350190825,
+      "tags": {
+        "leisure": "stadium",
+        "name": "استدیوم ورزشی نثاراحمد بهاوی(کاپیسا)"
+      }
+    },
+    {
+      "id": 377701392,
+      "tags": {
+        "alt_name": "Nimla bagh",
+        "fixme": "check",
+        "leisure": "park",
+        "name": "Memla garden"
+      }
+    },
+    {
+      "id": 377945129,
+      "tags": {
+        "landuse": "farmland",
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 377986380,
+      "tags": {
+        "landuse": "farmland",
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 378322331,
+      "tags": {
+        "landuse": "farmland",
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 378489767,
+      "tags": {
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 378489768,
+      "tags": {
+        "landuse": "farmland",
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 378505792,
+      "tags": {
+        "landuse": "farmland",
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 378654807,
+      "tags": {
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 379033467,
+      "tags": {
+        "leisure": "common",
+        "name": "Public lands"
+      }
+    },
+    {
+      "id": 380557849,
+      "tags": {
+        "leisure": "pitch",
+        "name": "میدان بز کشی"
+      }
+    },
+    {
+      "id": 386909105,
+      "tags": {
+        "leisure": "park",
+        "name": "د کندهار غازي پارک"
+      }
+    },
+    {
+      "id": 387447673,
+      "tags": {
+        "contact:facebook": "https://www.facebook.com/chihilsitoongarden/",
+        "leisure": "park",
+        "name": "باغ چهلستون",
+        "name:en": "Chihilsitoon Garden",
+        "name:ru": "Чехель-Сотун",
+        "wikidata": "Q2795775",
+        "wikipedia": "de:Tschehel Sotun (Kabul)"
+      }
+    },
+    {
+      "id": 389334609,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Chaman-e-Zarih Daar",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 391003269,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Stadion",
+        "sport": "gaelic_games"
+      }
+    },
+    {
+      "id": 394730240,
+      "tags": {
+        "leisure": "pitch",
+        "name:en": "Ghazi Amanullah International Cricket Stadium",
+        "name:ps": "د غازي امان الله نړيوال کريکټ لوبغالی‎",
+        "sport": "cricket",
+        "wikidata": "Q5556050"
+      }
+    },
+    {
+      "id": 413517906,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Pitch"
+      }
+    },
+    {
+      "id": 421791933,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک هلالی جغتایی"
+      }
+    },
+    {
+      "id": 428889231,
+      "tags": {
+        "leisure": "garden",
+        "name": "Block No 6 Garden"
+      }
+    },
+    {
+      "id": 440188128,
+      "tags": {
+        "landuse": "forest",
+        "leisure": "park",
+        "name": "باغ ریس",
+        "name:en": "Rais Garden"
+      }
+    },
+    {
+      "id": 453788690,
+      "tags": {
+        "leisure": "park",
+        "name": "Darul Aman Square"
+      }
+    },
+    {
+      "id": 505326985,
+      "tags": {
+        "leisure": "resort",
+        "name": "Шифохонаи Авч",
+        "name:en": "Avj Sanatorium",
+        "resort": "sanatorium"
+      }
+    },
+    {
+      "id": 526469636,
+      "tags": {
+        "leisure": "park",
+        "name": "کاریز فتی"
+      }
+    },
+    {
+      "id": 526775949,
+      "tags": {
+        "leisure": "stadium",
+        "lit": "no",
+        "name": "د لوگر ولایت د فوتبال لوبغالی",
+        "name:en": "Logar Province Football Ground",
+        "sport": "soccer",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 529152373,
+      "tags": {
+        "leisure": "pitch",
+        "lit": "yes",
+        "name": "کنړکرکټ میدان",
+        "sport": "cricket",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 529723807,
+      "tags": {
+        "leisure": "nature_reserve",
+        "name:en": "Zorkylsky Nature Refuge",
+        "name:zh": "佐库里自然保护区",
+        "wikidata": "Q16904612",
+        "wikipedia": "en:Zorkul Nature Reserve"
+      }
+    },
+    {
+      "id": 531560055,
+      "tags": {
+        "leisure": "park",
+        "name": "معلم خانی باغ"
+      }
+    },
+    {
+      "id": 534435182,
+      "tags": {
+        "leisure": "pitch",
+        "name": "paktya foot ball ground",
+        "sport": "soccer",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 536719939,
+      "tags": {
+        "leisure": "pitch",
+        "lit": "yes",
+        "name": "Cricket gronud Mogulkhel",
+        "name:ps": "دمغل خیلو دکرکت میدان",
+        "sport": "cricket",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 536719940,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Football gronud Mogulkhel",
+        "name:ps": "دمغل خیلو دفوتبال میدان",
+        "sport": "soccer",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 539101405,
+      "tags": {
+        "leisure": "pitch",
+        "lit": "yes",
+        "name": "Sharan football ground",
+        "sport": "soccer",
+        "surface": "ground"
+      }
+    },
+    {
+      "id": 540602058,
+      "tags": {
+        "leisure": "park",
+        "name": "Shahrakh Arya Park"
+      }
+    },
+    {
+      "id": 542026151,
+      "tags": {
+        "addr:city": "jalalabad",
+        "addr:street": "Bihsud road",
+        "leisure": "sports_centre",
+        "name": "Behsud Cricket Ground",
+        "sport": "cricket;cricket_nets"
+      }
+    },
+    {
+      "id": 553566671,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک وزیر اکبر خان",
+        "name:en": "Wazir Akbar Khan Park",
+        "name:fa": "پارک وزیر اکبر خان",
+        "name:ru": "Вазир Акбар Хан"
+      }
+    },
+    {
+      "id": 560456603,
+      "tags": {
+        "capacity": "6000",
+        "leisure": "stadium",
+        "name": "د الکوزی نړیوال کرکټ لوبغالی",
+        "name:en": "Alokozay International Cricket Stadium",
+        "name:ru": "Стадион Алкозай",
+        "wikidata": "Q6344444"
+      }
+    },
+    {
+      "id": 605976813,
+      "tags": {
+        "access": "private",
+        "fee": "no",
+        "leisure": "garden",
+        "name": "Engineer Sharifullah Safi Garden # 2"
+      }
+    },
+    {
+      "id": 606011234,
+      "tags": {
+        "access": "private",
+        "leisure": "garden",
+        "name": "Engineer Sharifullah Safi Garden 01"
+      }
+    },
+    {
+      "id": 612937682,
+      "tags": {
+        "addr:city": "Kabul",
+        "leisure": "park",
+        "name": "Adalate Park",
+        "name:fa": "پارک عدالت",
+        "name:ps": "د عدالت پارک"
+      }
+    },
+    {
+      "id": 613382925,
+      "tags": {
+        "leisure": "stadium",
+        "name": "احمد شاهي لوبغالی"
+      }
+    },
+    {
+      "id": 633392737,
+      "tags": {
+        "leisure": "pitch",
+        "name": "ورزشگاه",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 635015295,
+      "tags": {
+        "leisure": "sports_centre",
+        "name:fa": "مجتمع ورزشی خراسان"
+      }
+    },
+    {
+      "id": 685866293,
+      "tags": {
+        "leisure": "swimming_pool",
+        "name": "پارک داوود"
+      }
+    },
+    {
+      "id": 685866294,
+      "tags": {
+        "leisure": "pitch",
+        "name": "صالون فوتبال",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 698276475,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک جامی",
+        "name:en": "Jami Park",
+        "name:ru": "Джами"
+      }
+    },
+    {
+      "id": 698630698,
+      "tags": {
+        "leisure": "stadium",
+        "name": "Herat Stadium",
+        "name:ru": "Стадион Герат",
+        "operator": "City Council",
+        "sport": "soccer;multi"
+      }
+    },
+    {
+      "id": 699200372,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان"
+      }
+    },
+    {
+      "id": 701893879,
+      "tags": {
+        "alt_name:ru": "Кабульский сад",
+        "leisure": "park",
+        "name": "بوستان کابل",
+        "name:ru": "Бустан Кабул"
+      }
+    },
+    {
+      "id": 704537373,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک شیدایی"
+      }
+    },
+    {
+      "id": 705937119,
+      "tags": {
+        "leisure": "park",
+        "name": "Rahmatabad Park"
+      }
+    },
+    {
+      "id": 712400534,
+      "tags": {
+        "access": "private",
+        "building": "sports_hall",
+        "leisure": "pitch",
+        "name": "میدان فوتسال خمینی",
+        "name:en": "Khomaini Footsal Field",
+        "sport": "soccer",
+        "surface": "plastic"
+      }
+    },
+    {
+      "id": 713914709,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک حصه اول خیرخانه"
+      }
+    },
+    {
+      "id": 721977470,
+      "tags": {
+        "addr:housenumber": "13strits",
+        "addr:street": "aino twon b1",
+        "email": "bbashir6655@gmail.com",
+        "internet_access": "wlan",
+        "leisure": "garden",
+        "name:en": "Kandahar aino twon",
+        "opening_hours": "24/7",
+        "phone": "0093700318634"
+      }
+    },
+    {
+      "id": 730772371,
+      "tags": {
+        "leisure": "park",
+        "name": "بولان شمالی",
+        "name:en": "Bōlān-e Shamālī"
+      }
+    },
+    {
+      "id": 732584432,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک بخدی",
+        "name:en": "Bokhdi Park",
+        "name:fa": "پارک بخدی",
+        "name:ru": "Бохди",
+        "opening_hours": "24/7",
+        "place": "plot"
+      }
+    },
+    {
+      "id": 751322747,
+      "tags": {
+        "leisure": "park",
+        "name": "Боги маркази",
+        "name:en": "Central Park",
+        "name:ru": "Центральный паркPark"
+      }
+    },
+    {
+      "id": 784380342,
+      "tags": {
+        "leisure": "park",
+        "name": "City Park"
+      }
+    },
+    {
+      "id": 784727544,
+      "tags": {
+        "access": "private",
+        "leisure": "garden",
+        "name": "د عمرزی باغ",
+        "name:en": "Omerzai Garden"
+      }
+    },
+    {
+      "id": 793826561,
+      "tags": {
+        "building": "yes",
+        "club": "sport",
+        "leisure": "sports_centre",
+        "name": "Javanan Snooker club",
+        "name:fa": "سنوکر کلاب جوانان",
+        "sport": "billiards"
+      }
+    },
+    {
+      "id": 810536098,
+      "tags": {
+        "building": "sports_centre",
+        "leisure": "water_park",
+        "name:fa": "مجتمع آبی و تفریحی موج‌های خروشان"
+      }
+    },
+    {
+      "id": 813261051,
+      "tags": {
+        "leisure": "park",
+        "name": "د ملا نقيب چوک"
+      }
+    },
+    {
+      "id": 815024197,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان"
+      }
+    },
+    {
+      "id": 821550164,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان شهر"
+      }
+    },
+    {
+      "id": 821944149,
+      "tags": {
+        "building": "sports_hall",
+        "leisure": "sports_centre",
+        "name": "مجتمع ورزشی ستاره آزادی"
+      }
+    },
+    {
+      "id": 839626642,
+      "tags": {
+        "leisure": "pitch",
+        "name:en": "Horse Park",
+        "opening_hours": "Fr 14:00-17:00",
+        "sport": "buzkashi"
+      }
+    },
+    {
+      "id": 864543380,
+      "tags": {
+        "building": "yes",
+        "leisure": "swimming_pool",
+        "name:en": "Atlas",
+        "name:ru": "Атлас",
+        "roof:shape": "gabled"
+      }
+    },
+    {
+      "id": 872996674,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک شهرداری ایبک",
+        "name:en": "Aybak municipality park"
+      }
+    },
+    {
+      "id": 873030302,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک گلخان",
+        "name:en": "gul khan park"
+      }
+    },
+    {
+      "id": 873030303,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک زنانه (پارک تهمینه(",
+        "name:en": "women park;Tahmina park",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "id": 876397268,
+      "tags": {
+        "leisure": "stadium",
+        "name": "میدان فوتسال کارته صلح",
+        "name:en": "Karta-e Sulh Football Stadium",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 877761012,
+      "tags": {
+        "leisure": "stadium",
+        "name": "میدان فوتسال آهینچه",
+        "name:en": "Soccer Stadium (Ayinacha)",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 915474478,
+      "tags": {
+        "leisure": "park",
+        "name": "Turkish Department Park",
+        "name:fa": "پارک ادبیات ترکی",
+        "name:ps": "د ترکی پوهنحٔی پارک"
+      }
+    },
+    {
+      "id": 915474481,
+      "tags": {
+        "access": "permissive",
+        "leisure": "pitch",
+        "name": "Soccer Field of Kabul University",
+        "name:fa": "زمین فوتبال",
+        "name:ps": "د فوتبال میدان",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 915493466,
+      "tags": {
+        "access": "permissive",
+        "leisure": "pitch",
+        "name": "Basketball field",
+        "name:fa": "میدان بسکتبال",
+        "sport": "basketball"
+      }
+    },
+    {
+      "id": 929125918,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک و میدان بازی"
+      }
+    },
+    {
+      "id": 930300440,
+      "tags": {
+        "building": "yes",
+        "leisure": "pitch",
+        "name": "Gymnasium Futsal",
+        "sport": "futsal"
+      }
+    },
+    {
+      "id": 931375434,
+      "tags": {
+        "leisure": "park",
+        "name": "بوستان آریانا",
+        "name:ru": "Арианский сад"
+      }
+    },
+    {
+      "id": 938528967,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک دهبوری",
+        "name:en": "Dehbory Park"
+      }
+    },
+    {
+      "id": 945638332,
+      "tags": {
+        "leisure": "park",
+        "name": "باغ تفریحی حاجی شیر صراف"
+      }
+    },
+    {
+      "id": 949675940,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک مرکزی شهر ایبک",
+        "name:en": "Aybak central park",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "id": 1039812950,
+      "tags": {
+        "addr:city": "Sharana",
+        "addr:postcode": "2401",
+        "addr:street": "Gardez Line",
+        "leisure": "park",
+        "name": "د ښرنې تفریحي او ورزشي پارک",
+        "name:en": "Sharana Recreational Park",
+        "operator": "Public"
+      }
+    },
+    {
+      "id": 1080871790,
+      "tags": {
+        "access": "private",
+        "fee": "no",
+        "garden:type": "private",
+        "leisure": "garden",
+        "name": "Boghi Zohir",
+        "operator": "Zohir",
+        "operator:type": "private"
+      }
+    },
+    {
+      "id": 1120639322,
+      "tags": {
+        "leisure": "park",
+        "name": "باغ افغان پطرول",
+        "name:en": "Afghan Petrol Garden"
+      }
+    },
+    {
+      "id": 1125519803,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Emam Jafar Sadiq Futsal Court",
+        "name:fa": "صالون فوتسال امام جعفر صادق",
+        "sport": "futsal"
+      }
+    },
+    {
+      "id": 1125988017,
+      "tags": {
+        "leisure": "garden",
+        "name": "Chihil Dukhtaran Garden"
+      }
+    },
+    {
+      "id": 1164330211,
+      "tags": {
+        "boundary": "protected_area",
+        "leisure": "nature_reserve",
+        "name": "Payg'ambar Oroli Davlat Qo'riqxonasi",
+        "name:en": "\"Aral-Paigambar\" State Nature Reserve",
+        "name:ru": "Государственный заповедник «Арал-Пайгамбар»",
+        "wikidata": "Q4306358",
+        "wikipedia": "en:Aral-Paygambar"
+      }
+    },
+    {
+      "id": 1212685331,
+      "tags": {
+        "leisure": "pitch",
+        "name": "Tamqol maihan",
+        "name:fa": "سالن ورزشی میهن تمقول",
+        "sport": "futsal"
+      }
+    },
+    {
+      "id": 1228179160,
+      "tags": {
+        "access": "yes",
+        "leisure": "pitch",
+        "lit": "yes",
+        "name": "د بهرامچې د فوټبال میدان",
+        "sport": "soccer"
+      }
+    },
+    {
+      "id": 1238054070,
+      "tags": {
+        "leisure": "park",
+        "name": "د حاجي عبدلله صراف حوض"
+      }
+    },
+    {
+      "id": 1245263210,
+      "tags": {
+        "addr:city": "Lashkargah",
+        "leisure": "park",
+        "name": "Helmand Women Park"
+      }
+    },
+    {
+      "id": 1304036783,
+      "tags": {
+        "leisure": "park",
+        "name": "Боғи ғалаба"
+      }
+    },
+    {
+      "id": 1335881424,
+      "tags": {
+        "leisure": "park",
+        "name": "میرویس پارک",
+        "name:ar": "میرویس پارک",
+        "name:en": "Mirwais Park",
+        "name:ru": "Мирваис"
+      }
+    },
+    {
+      "id": 1336919985,
+      "tags": {
+        "leisure": "sports_centre",
+        "name": "نبی نړیوال کرکټ اکاډمي",
+        "name:en": "Nabi International Cricket Academy",
+        "sport": "cricket"
+      }
+    },
+    {
+      "id": 1339275358,
+      "tags": {
+        "leisure": "park",
+        "name": "باغ ملت",
+        "name:en": "Bagh-e-Mellat"
+      }
+    },
+    {
+      "id": 1341083580,
+      "tags": {
+        "leisure": "stadium",
+        "name": "Недостроенный"
+      }
+    },
+    {
+      "id": 1343854507,
+      "tags": {
+        "leisure": "park",
+        "name": "باغ آزادی",
+        "name:en": "Baghe Azadi"
+      }
+    },
+    {
+      "id": 1344496257,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک فرهنگ",
+        "name:en": "Farhang Park",
+        "name:ru": "Фархан"
+      }
+    },
+    {
+      "id": 1344785800,
+      "tags": {
+        "leisure": "park",
+        "name": "Park"
+      }
+    },
+    {
+      "id": 1347922678,
+      "tags": {
+        "addr:city": "Kabul",
+        "addr:postcode": "1002",
+        "addr:street": "3rd Microrayan",
+        "alt_name:ru": "Парк Киев",
+        "leisure": "park",
+        "name:en": "Park Kiev",
+        "name:fa": "پارک کیف",
+        "name:ru": "Киевский парк",
+        "opening_hours": "24/7"
+      }
+    },
+    {
+      "id": 1350598039,
+      "tags": {
+        "leisure": "park",
+        "name:en": "Кфрьфт зфкл",
+        "name:ru": "Рахман"
+      }
+    },
+    {
+      "id": 1446843285,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک تخت صفر",
+        "name:en": "Takht-e-Safar Park"
+      }
+    },
+    {
+      "id": 1446966811,
+      "tags": {
+        "leisure": "park",
+        "name": "Bamyam Provence  park"
+      }
+    },
+    {
+      "id": 1454581430,
+      "tags": {
+        "leisure": "park",
+        "name": "پارک کمپلکس اداری شهر محمودراقی"
+      }
+    },
+    {
+      "id": 1465787085,
+      "tags": {
+        "amenity": "restaurant",
+        "cuisine": "fish",
+        "leisure": "resort",
+        "name:en": "Sayaad Resort",
+        "name:ru": "Пуль-э-Сайяд"
+      }
+    }
+  ]
+}

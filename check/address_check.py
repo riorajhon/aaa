@@ -43,6 +43,12 @@ COUNTRY_MAPPING = {
     "u.s.a.": "united states",
     "u.s.": "united states",
     "u.k.": "united kingdom",
+    
+    'north macedonia, the republic of': 'north macedonia',
+
+    # palestinian
+    'palestine, state of': 'palestinian territory',
+    'palestinian': 'palestinian territory',
 }
 
 

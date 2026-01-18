@@ -194,31 +194,40 @@ class WayProcessor:
         
         return country, city, street
     
+    def safe_print(self, text):
+        """Print text safely, handling Unicode encoding issues"""
+        try:
+            print(text)
+        except UnicodeEncodeError:
+            # Replace problematic characters with ASCII equivalents
+            safe_text = text.encode('ascii', 'replace').decode('ascii')
+            print(safe_text)
+    
     def process_way(self, way):
         """Process a single way"""
         self.stats['total'] += 1
         way_id = way['id']
         way_name = way['tags'].get('name', '')
         
-        print(f"\n[{self.stats['total']}] Processing W{way_id}: {way_name}")
+        self.safe_print(f"\n[{self.stats['total']}] Processing W{way_id}: {way_name}")
         
         # Query Nominatim
         nominatim_result, error = self.query_nominatim_lookup(way_id)
         
         if error:
-            print(f"  ❌ Nominatim error: {error}")
+            print(f"  [ERROR] Nominatim error: {error}")
             self.stats['errors'] += 1
             return
         
         # Case 1: Empty Nominatim result
         if not nominatim_result or len(nominatim_result) == 0:
-            print(f"  ⚠️  Empty Nominatim result, trying Photon...")
+            print(f"  [WARNING] Empty Nominatim result, trying Photon...")
             self.stats['empty_nominatim'] += 1
             self.handle_empty_nominatim(way_id, way_name)
         
         # Case 2: Nominatim result exists
         else:
-            print(f"  ✓ Nominatim result found")
+            print(f"  [OK] Nominatim result found")
             self.handle_nominatim_result(way_id, way_name, nominatim_result[0])
     
     def handle_empty_nominatim(self, way_id, way_name):
@@ -227,12 +236,12 @@ class WayProcessor:
         photon_result, error = self.query_photon_search(way_name, self.country)
         
         if error or not photon_result:
-            print(f"  ❌ Photon error: {error}")
+            print(f"  [ERROR] Photon error: {error}")
             return
         
         features = photon_result.get('features', [])
         if len(features) == 0:
-            print(f"  ⚠️  No Photon results")
+            print(f"  [WARNING] No Photon results")
             return
         
         print(f"  🔍 Searching through {len(features)} Photon results for matching OSM ID...")
@@ -246,12 +255,12 @@ class WayProcessor:
             
             if photon_osm_id == way_id:
                 matching_feature = feature
-                print(f"  ✓ Found match: {photon_osm_type}{photon_osm_id}")
+                print(f"  [OK] Found match: {photon_osm_type}{photon_osm_id}")
                 break
         
         # If no match found, skip
         if not matching_feature:
-            print(f"  ⏭️  No matching OSM ID found in {len(features)} Photon results (looking for W{way_id})")
+            print(f"  [SKIP] No matching OSM ID found in {len(features)} Photon results (looking for W{way_id})")
             self.stats['skipped_mismatch'] += 1
             return
         
@@ -261,7 +270,7 @@ class WayProcessor:
         coordinates = geometry.get('coordinates', [])
         
         if len(coordinates) < 2:
-            print(f"  ❌ Invalid Photon coordinates")
+            print(f"  [ERROR] Invalid Photon coordinates")
             return
         
         photon_osm_type = properties.get('osm_type', '')
@@ -288,8 +297,15 @@ class WayProcessor:
         }
         
         try:
+            # Check if address already exists to prevent duplicates
+            existing = self.uav_collection.find_one({'address': address})
+            if existing:
+                print(f"  [SKIP] Address already exists in UAV collection, skipping duplicate")
+                self.stats['skipped_mismatch'] += 1
+                return
+            
             self.uav_collection.insert_one(data)
-            print(f"  ✓ Saved to UAV collection: {address}")
+            self.safe_print(f"  [OK] Saved to UAV collection: {address}")
             self.stats['found_photon'] += 1
         except Exception as e:
             print(f"  ❌ Error saving to UAV: {e}")
@@ -303,7 +319,7 @@ class WayProcessor:
         
         # If score == 1, save to validated_addresses
         if score == 1:
-            print(f"  ✓ Validation score: 1.0")
+            print(f"  [OK] Validation score: 1.0")
             country, city, street = self.extract_nominatim_fields(nominatim_result)
             
             data = {
@@ -322,10 +338,10 @@ class WayProcessor:
                     {'$set': data},
                     upsert=True
                 )
-                print(f"  ✓ Saved to validated_addresses: {display_name}")
+                self.safe_print(f"  [OK] Saved to validated_addresses: {display_name}")
                 self.stats['validated_score_1'] += 1
             except Exception as e:
-                print(f"  ❌ Error saving to validated: {e}")
+                print(f"  [ERROR] Error saving to validated: {e}")
         
         # Get coordinates from Nominatim
         lat = nominatim_result.get('lat')
@@ -337,25 +353,31 @@ class WayProcessor:
         nominatim_country = nominatim_address.get('country', '')
         
         if not lat or not lon:
-            print(f"  ❌ No coordinates in Nominatim result")
+            print(f"  [ERROR] No coordinates in Nominatim result")
             return
         
         # Query Nominatim reverse
         nominatim_reverse_result, error = self.query_nominatim_reverse(lat, lon)
         
         if error or not nominatim_reverse_result:
-            print(f"  ❌ Nominatim reverse error: {error}")
+            print(f"  [ERROR] Nominatim reverse error: {error}")
             return
         
         reverse_osm_id = nominatim_reverse_result.get('osm_id')
         reverse_osm_type = nominatim_reverse_result.get('osm_type', '')
+        
+        # Skip if reverse result is a node
+        if reverse_osm_type.lower() == 'node':
+            print(f"  [SKIP] Skipping node result: {reverse_osm_type}{reverse_osm_id}")
+            self.stats['skipped_mismatch'] += 1
+            return
         
         # Convert osm_type to clean format (way -> W, node -> N, relation -> R)
         reverse_osm_type_clean = self.convert_osm_type(reverse_osm_type)
         
         # Check if OSM IDs match
         if reverse_osm_id == nominatim_osm_id:
-            print(f"  ⏭️  OSM ID match: Original={nominatim_osm_id}, Reverse={reverse_osm_id}")
+            print(f"  [SKIP] OSM ID match: Original={nominatim_osm_id}, Reverse={reverse_osm_id}")
             self.stats['skipped_mismatch'] += 1
             return
         
@@ -375,11 +397,18 @@ class WayProcessor:
         }
         
         try:
+            # Check if address already exists to prevent duplicates
+            existing = self.uav_collection.find_one({'address': display_name})
+            if existing:
+                print(f"  [SKIP] Address already exists in UAV collection, skipping duplicate")
+                self.stats['skipped_mismatch'] += 1
+                return
+            
             self.uav_collection.insert_one(data)
-            print(f"  ✓ Saved to UAV collection: {display_name}")
+            self.safe_print(f"  [OK] Saved to UAV collection: {display_name}")
             self.stats['saved_uav'] += 1
         except Exception as e:
-            print(f"  ❌ Error saving to UAV: {e}")
+            print(f"  [ERROR] Error saving to UAV: {e}")
     
     def run(self):
         """Main processing loop"""
@@ -395,7 +424,7 @@ class WayProcessor:
         elif os.path.exists(os.path.join('uav', self.filename)):
             filepath = os.path.join('uav', self.filename)
         else:
-            print(f"❌ Error: File not found: {self.filename}")
+            print(f"[ERROR] Error: File not found: {self.filename}")
             print(f"   Tried: {self.filename}")
             print(f"   Tried: uav/{self.filename}")
             sys.exit(1)
@@ -416,7 +445,7 @@ class WayProcessor:
         self.print_stats()
     
     def print_stats(self):
-        """Print processing statistics"""
+        """Print processing statistics and save to JSON file"""
         print("\n" + "=" * 80)
         print("PROCESSING COMPLETE")
         print("=" * 80)
@@ -427,6 +456,38 @@ class WayProcessor:
         print(f"Saved to UAV: {self.stats['saved_uav']}")
         print(f"Skipped (mismatch): {self.stats['skipped_mismatch']}")
         print(f"Errors: {self.stats['errors']}")
+        
+        # Save statistics to JSON file
+        self.save_stats_json()
+    
+    def save_stats_json(self):
+        """Save statistics to JSON file named after country"""
+        import json
+        
+        stats_data = {
+            "country": self.country,
+            "filename": self.filename,
+            "statistics": {
+                "total_processed": self.stats['total'],
+                "empty_nominatim": self.stats['empty_nominatim'],
+                "found_photon": self.stats['found_photon'],
+                "validated_score_1": self.stats['validated_score_1'],
+                "saved_uav": self.stats['saved_uav'],
+                "skipped_mismatch": self.stats['skipped_mismatch'],
+                "errors": self.stats['errors']
+            }
+        }
+        
+        # Create filename based on country name (replace spaces with underscores)
+        country_safe = self.country.replace(' ', '_').replace(',', '').lower()
+        json_filename = f"stats_{country_safe}.json"
+        
+        try:
+            with open(json_filename, 'w', encoding='utf-8') as f:
+                json.dump(stats_data, f, indent=2, ensure_ascii=False)
+            print(f"Statistics saved to: {json_filename}")
+        except Exception as e:
+            print(f"Error saving statistics: {e}")
 
 def main():
     if len(sys.argv) < 3:
